@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header id="header" class="w-100">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg nav-border">
+        <div class="container-fluid mx-4 mx-lg-5">
+          <a
+            class="navbar-brand d-flex align-items-center gap-3 mt-lg-2"
+            href="#"
+          >
+            <div
+              class="nav-icon d-flex align-items-center justify-content-center"
+            >
+              <i class="fa-sharp fa-solid fa-utensils text-white fs-4"></i>
+            </div>
+            <div>
+              <h1 class="header-color text-heading mb-0 mt-2 fs-3">
+                What's For Dinner
+              </h1>
+              <p class="text-color fs-6 mb-0">Your daily meal inspiration</p>
+            </div>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul
+              class="navbar-nav custom-nav-list list-unstyled ms-auto pt-3 pt-lg-0 mt-2 mb-2 mb-lg-0"
+            >
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-3" href="#">
+                  <div
+                    class="btn-nav d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fa-solid fa-bookmark"></i>
+                  </div>
+                  <span class="nav-text transition-E fs-5"> Saved Recipes</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-3" href="#">
+                  <div
+                    class="btn-nav d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                  </div>
+                  <span class="nav-text transition-E fs-5"> Recent</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-3" href="#">
+                  <div
+                    class="btn-nav d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fa-solid fa-gear"></i>
+                  </div>
+                  <span class="nav-text transition-E fs-5"> Settings</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-3" href="#">
+                  <img
+                    src="./images/avatar-2.jpg"
+                    class="img-profile rounded-circle"
+                    alt="person profile"
+                  />
+                  <span class="nav-text fs-5"> Profile</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+   
+    </header>
+
+
+    <main id="main-content">
+      <section id="recipe-display-section" class="recipe-section py-5 px-3 min-vh-100">
+        <div class="container-fluid px-4 px-lg-5">
+
+          <!-- image-section -->
+          <div class="row section-border shadow">
+            <div class="col-12 col-lg-4 ps-0 pe-0">
+              <div class="inner position-relative">
+                <img id="recipe-image"
+                  src="./images/Vegetable Curry-photo.avif"
+                  class="recipe-img"
+                  alt="Vegetable Curry photo"
+                />
+                <div class="badge-img bg-white rounded-pill">
+                  <div class="d-flex align-items-center gap-2">
+                    <i
+                      class="fa-sharp fa-solid fa-star fs-5"
+                      style="color: #fdc700"
+                    ></i><span id="rating-average" class="header-color text-heading fs-5">4.6</span>
+                    <span id="rating-quantity" class="text-color">(289 reviews)</span>
+                  </div>
+                </div>
+                <div class="badge-info row g-3 g-lg-4">
+                  <div class="col-4">
+                    <div class="content text-center">
+                      <i
+                        class="fa-solid fa-clock fs-3"
+                        style="color: #ff6900"
+                      ></i>
+                      <p class="text-color fs-6 mb-0">Prep Time</p>
+                      <p id="prep-time-display" class="header-color text-heading mb-0">20 min</p>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="content text-center">
+                      <i
+                        class="fa-solid fa-fire-burner fs-3"
+                        style="color: #fb2c36"
+                      ></i>
+                      <p class="text-color fs-6 mb-0">Cook Time</p>
+                      <p id="cook-time-display" class="header-color text-heading mb-0">30 min</p>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="content text-center">
+                      <i
+                        class="fa-solid fa-users fs-3"
+                        style="color: #2b7fff"
+                      ></i>
+                      <p class="text-color fs-6 mb-0">Servings</p>
+                      <p id="servings-display" class="header-color text-heading mb-0">4 people</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-8 bg-white section-hieght p-5 overflow-y-auto">
+              <div class="content">
+
+                <div class="d-flex justify-content-between mb-2">
+                  <div>
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                      <span class="bg-green text-green px-3 py-1 rounded-pill" id="difficulty-badge"
+                        >Easy</span
+                      >
+                      <span class="bg-blue text-blue px-3 py-1 rounded-pill" id="category-badge"
+                        >Asian</span
+                      >
+                    </div>
+                    <h3 id="recipe-name" class="header-color text-heading mb-2 fs-1">
+                      Vegetable Curry
+                    </h3>
+                    <p id="recipe-description" class="text-color fs-5">
+                      Hearty vegetarian curry with coconut milk
+                    </p>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <button
+                      class="btn-category bg-orange text-orange border-0 rounded-4 d-flex align-items-center justify-content-center"
+                    >
+                      <i class="fa-sharp fa-solid fa-bookmark fs-5"></i>
+                    </button>
+                    <button
+                      class="btn-category bg-orange text-orange border-0 rounded-4 d-flex align-items-center justify-content-center"
+                    >
+                      <i class="fa-sharp fa-solid fa-share-nodes fs-5"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- part-two -->
+                <div id="time-warning" class="bg-red border-left-sec px-3 py-4 rounded-3 mb-5">
+                  <div class="d-flex align-items-center gap-2">
+                    <i
+                      class="fa-solid fa-triangle-exclamation fs-4"
+                      style="color: #fb2c36"
+                    ></i>
+                    <div>
+                      <p class="header-describtion text-heading fs-5 mb-0">
+                        Extended Preparation Time
+                      </p>
+                      <p class="text-red mb-0">
+                        This recipe requires more than 45 minutes to prepare.
+                        Plan accordingly!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- part-three -->
+                <ul
+                  class="nav nav-underline gap-md-5 gap-lg-5 mx-4"
+                  id="myTab"
+                  role="tablist"
+                >
+                  <li class="nav-item text-heading me-lg-5" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="ingredient-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#ingredient-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="ingredient-tab-pane"
+                      aria-selected="true"
+                    >
+                      <i class="fa-solid fa-list-check"></i>
+                      Ingredients
+                    </button>
+                  </li>
+                  <li class="nav-item text-heading me-lg-5" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="instructions-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#instructions-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="instructions-tab-pane"
+                      aria-selected="false"
+                    >
+                      <i class="fa-solid fa-book-open"></i>
+                      Instructions
+                    </button>
+                  </li>
+                  <li class="nav-item text-heading me-lg-5" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="nutrition-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#nutrition-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="nutrition-tab-pane"
+                      aria-selected="false"
+                    >
+                      <i class="fa-solid fa-chart-pie"></i>
+                      Nutrition
+                    </button>
+                  </li>
+                  <li class="nav-item text-heading me-lg-5" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="chefs-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#chefs-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="chefs-tab-pane"
+                      aria-selected="false"
+                    >
+                      <i class="fa-solid fa-lightbulb"></i>
+                      Chef's Tips
+                    </button>
+                  </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                  <div
+                    class="tab-pane fade show active mx-4"
+                    id="ingredient-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="ingredient-tab"
+                    tabindex="0"
+                  >
+                    <div class="ingredient-section overflow-y-auto">
+                      <div class="ingredient-content py-4 rounded-4">
+                        <ul id="ingredient-list" class="list-unstyled ps-0">
+                          <li class="d-flex align-items-start gap-3 mb-3">
+                            <div
+                              class="ingredient-number d-flex align-items-center justify-content-center text-heading text-white"
+                            >
+                              1
+                            </div>
+                            <span class="ingredient-name"
+                              >2 potatoes, cubed</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start gap-3 mb-3">
+                            <div
+                              class="ingredient-number d-flex align-items-center justify-content-center text-heading text-white"
+                            >
+                              2
+                            </div>
+                            <span class="ingredient-name"
+                              >1 cauliflower, florets</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start gap-3 mb-3">
+                            <div
+                              class="ingredient-number d-flex align-items-center justify-content-center text-heading text-white"
+                            >
+                              3
+                            </div>
+                            <span class="ingredient-name">
+                              2 carrots, sliced</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start gap-3 mb-3">
+                            <div
+                              class="ingredient-number d-flex align-items-center justify-content-center text-heading text-white"
+                            >
+                              4
+                            </div>
+                            <span class="ingredient-name">1 can chickpeas</span>
+                          </li>
+                          <li class="d-flex align-items-start gap-3 mb-3">
+                            <div
+                              class="ingredient-number d-flex align-items-center justify-content-center text-heading text-white"
+                            >
+                              5
+                            </div>
+                            <span class="ingredient-name"
+                              >400ml coconut milk</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start gap-3 mb-3">
+                            <div
+                              class="ingredient-number d-flex align-items-center justify-content-center text-heading text-white"
+                            >
+                              6
+                            </div>
+                            <span class="ingredient-name"
+                              >3 tablespoons curry powder</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start gap-3 mb-3">
+                            <div
+                              class="ingredient-number d-flex align-items-center justify-content-center text-heading text-white"
+                            >
+                              7
+                            </div>
+                            <span class="ingredient-name">1 onion, diced</span>
+                          </li>
+                          <li class="d-flex align-items-start gap-3 mb-3">
+                            <div
+                              class="ingredient-number d-flex align-items-center justify-content-center text-heading text-white"
+                            >
+                              8
+                            </div>
+                            <span class="ingredient-name"
+                              >3 cloves garlic, minced</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-start gap-3 mb-3">
+                            <div
+                              class="ingredient-number d-flex align-items-center justify-content-center text-heading text-white"
+                            >
+                              9
+                            </div>
+                            <span class="ingredient-name">Fresh spinach</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="tab-pane fade mx-4"
+                    id="instructions-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="instructions-tab"
+                    tabindex="0"
+                  >
+                    <div class="instructions-section overflow-y-auto">
+                      <div>
+                        <ul id="instructions-list" class="list-unstyled ps-0">
+                          <li class="d-flex align-items-center gap-3 mb-5">
+                            <div
+                              class="instructions-number d-flex align-items-center justify-content-center text-heading text-white fs-4"
+                            >
+                              1
+                            </div>
+                            <span class="instructions-name mb-0"
+                              >Heat oil in a large pot. Sauté onion until soft,
+                              add garlic and curry powder, cook for 1
+                              minute.</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-center gap-3 mb-5">
+                            <div
+                              class="instructions-number d-flex align-items-center justify-content-center text-heading text-white fs-4"
+                            >
+                              2
+                            </div>
+                            <span class="instructions-name mb-0"
+                              >Add potatoes and carrots, cook for 5
+                              minutes.</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-center gap-3 mb-5">
+                            <div
+                              class="instructions-number d-flex align-items-center justify-content-center text-heading text-white fs-4"
+                            >
+                              3
+                            </div>
+                            <span class="instructions-name mb-0"
+                              >Pour in coconut milk and 1 cup water. Bring to
+                              simmer.</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-center gap-3 mb-5">
+                            <div
+                              class="instructions-number d-flex align-items-center justify-content-center text-heading text-white fs-4"
+                            >
+                              4
+                            </div>
+                            <span class="instructions-name mb-0"
+                              >Add cauliflower and chickpeas. Cook for 20 minutes
+                              until vegetables are tender.</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-center gap-3 mb-5">
+                            <div
+                              class="instructions-number d-flex align-items-center justify-content-center text-heading text-white fs-4"
+                            >
+                              5
+                            </div>
+                            <span class="instructions-name mb-0"
+                              >Stir in fresh spinach and cook until
+                              wilted.</span
+                            >
+                          </li>
+                          <li class="d-flex align-items-center gap-3 mb-5">
+                            <div
+                              class="instructions-number d-flex align-items-center justify-content-center text-heading text-white fs-4"
+                            >
+                              6
+                            </div>
+                            <span class="instructions-name mb-0">
+                              Serve hot over basmati rice or with naan
+                              bread.</span
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="tab-pane fade mx-4"
+                    id="nutrition-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="nutrition-tab"
+                    tabindex="0"
+                  >
+                    <div class="row g-4">
+                      <div class="col-12 col-md-6">
+                        <div
+                          class="content bg-card rounded-4 d-flex align-items-center justify-content-between p-4"
+                        >
+                          <div class="d-flex align-items-center gap-3">
+                            <div
+                              class="nutrition-icon bg-orange text-orange rounded-3 d-flex align-items-center justify-content-center"
+                            >
+                              <i class="fa-solid fa-fire fs-5"></i>
+                            </div>
+                            <span class="fs-5">Calories</span>
+                          </div>
+                          <span id="calories-value" class="text-heading fs-4">380 kcal</span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div
+                          class="content bg-card rounded-4 d-flex align-items-center justify-content-between p-4"
+                        >
+                          <div class="d-flex align-items-center gap-3">
+                            <div
+                              class="nutrition-icon bg-blue text-blue rounded-3 d-flex align-items-center justify-content-center"
+                            >
+                              <i class="fa-solid fa-dumbbell fs-5"></i>
+                            </div>
+                            <span class="fs-5">Protein</span>
+                          </div>
+                          <span id="protein-value" class="text-heading fs-4">14g</span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div
+                          class="content bg-card rounded-4 d-flex align-items-center justify-content-between p-4"
+                        >
+                          <div class="d-flex align-items-center gap-3">
+                            <div
+                              class="nutrition-icon bg-yellow text-yellow rounded-3 d-flex align-items-center justify-content-center"
+                            >
+                              <i class="fa-solid fa-wheat-awn fs-5"></i>
+                            </div>
+                            <span class="fs-5">Carbohydrates</span>
+                          </div>
+                          <span id="carb-value" class="text-heading fs-4">48g</span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div
+                          class="content bg-card rounded-4 d-flex align-items-center justify-content-between p-4"
+                        >
+                          <div class="d-flex align-items-center gap-3">
+                            <div
+                              class="nutrition-icon bg-red text-red rounded-3 d-flex align-items-center justify-content-center"
+                            >
+                              <i class="fa-solid fa-droplet fs-5"></i>
+                            </div>
+                            <span class="fs-5">Fat</span>
+                          </div>
+                          <span id="fat-value" class="text-heading fs-4">16g</span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div
+                          class="content bg-card rounded-4 d-flex align-items-center justify-content-between p-4"
+                        >
+                          <div class="d-flex align-items-center gap-3">
+                            <div
+                              class="nutrition-icon bg-green text-green rounded-3 d-flex align-items-center justify-content-center"
+                            >
+                              <i class="fa-solid fa-seedling fs-5"></i>
+                            </div>
+                            <span class="fs-5">Fiber</span>
+                          </div>
+                          <span id="fiber-value" class="text-heading fs-4">12g</span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div
+                          class="content bg-card rounded-4 d-flex align-items-center justify-content-between p-4"
+                        >
+                          <div class="d-flex align-items-center gap-3">
+                            <div
+                              class="nutrition-icon bg-pink text-pink rounded-3 d-flex align-items-center justify-content-center"
+                            >
+                              <i class="fa-solid fa-cube fs-5"></i>
+                            </div>
+                            <span class="fs-5">Sodium</span>
+                          </div>
+                          <span id="sodium-value" class="text-heading fs-4">480mg</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="tab-pane fade mx-4"
+                    id="chefs-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="chefs-tab"
+                    tabindex="0"
+                  >
+                    <div id="chefs-list">
+                      <div
+                        class="chefs-card d-flex align-items-center gap-3 mb-3 p-3 rounded-4"
+                      >
+                        <i
+                          class="fa-solid fa-circle-check fs-4"
+                          style="color: #e17100"
+                        ></i>
+                        <p class="chefs-name mb-0">
+                          Add vegetables in order of cooking time needed
+                        </p>
+                      </div>
+                      <div
+                        class="chefs-card d-flex align-items-center gap-3 mb-3 p-3 rounded-4"
+                      >
+                        <i
+                          class="fa-solid fa-circle-check fs-4"
+                          style="color: #e17100"
+                        ></i>
+                        <p class="chefs-name mb-0">
+                          Adjust curry powder amount to taste
+                        </p>
+                      </div>
+                      <div
+                        class="chefs-card d-flex align-items-center gap-3 mb-3 p-3 rounded-4"
+                      >
+                        <i
+                          class="fa-solid fa-circle-check fs-4"
+                          style="color: #e17100"
+                        ></i>
+                        <p class="chefs-name mb-0">
+                          Use full-fat coconut milk for creamier curry
+                        </p>
+                      </div>
+                      <div
+                        class="chefs-card d-flex align-items-center gap-3 mb-3 p-3 rounded-4"
+                      >
+                        <i
+                          class="fa-solid fa-circle-check fs-4"
+                          style="color: #e17100"
+                        ></i>
+                        <p class="chefs-name mb-0">
+                          Add protein like tofu or paneer if desired
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- button-section -->
+                <div class="btn-border mt-5 mx-4 pt-4">
+                  <button id="try-another-btn" onclick="displayRecipes()" class="btn-recipe d-flex align-items-center gap-2 text-white px-4 py-2 px-lg-5 py-lg-3 rounded-3 border-0">
+                    <i class="fa-solid fa-rotate"></i>
+                    Try Another Recipe
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+   
+
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script src="./JS/main.js"></script>
+  </body>
+</html>
